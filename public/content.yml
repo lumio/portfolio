@@ -1,0 +1,112 @@
+titlescreen:
+  title: Portfolio
+  subtitle: of Benjamin Falk
+  mail: benjamin [dot] falk [at] cyanjoe [dot] com
+projects:
+  -
+    title: wallboard
+    description: |
+      A **build status monitor for Jenkins**. It started as a weekend project,
+      published under the **open source license GPL-3.0**. It is built with
+      **React** in the frontend and **NodeJS** with ExpressJS in the backend.
+      Communication works via websockets.
+    packageUrl: https://npmjs.com/package/wallboard
+    repository: https://github.com/lumio/wallboard
+    devices:
+      browser:
+        addressBar: Package available at https://npmjs.com/package/wallboard
+        element: WallboardShowcase
+
+  -
+    title: Dubf Almighty
+    description: |
+      A movie picker that gives random suggestions.
+      Yet another small **open source weekend project** proofing that there is
+      **no need for any library like jQuery** anymore to build a small website
+      that should **work in all major browsers**.
+    url: https://dubf.herokuapp.com
+    repository: https://github.com/lumio/dubf
+    devices:
+      browser:
+        addressBar: https://dubf.herokuapp.com
+        element: DubfShowcaseBrowser
+      phone:
+        element: DubfShowcasePhone
+
+  -
+    title: waveblock
+    description: |
+      Proof of concept on how to access the microphone or a sound file and
+      **visualize sound** and its frequencies using **HTML5** and
+      **AudioContext**.
+
+      For the visualization itself, **styled-components** are being used with
+      CSS transitions.
+    repository: https://github.com/lumio/waveblock
+    devices:
+      browser:
+        addressBar: Repository at https://github.com/lumio/waveblock
+        element: WaveBlockShowcase
+
+  -
+    title: Gutmann *- Private Bankers*
+    description: |
+      The entire website, including the private customer section, is being
+      ported using **React**, **Relay** for data abstraction and with C# in
+      the backend
+    released: December 2017
+    role: Frontend Engineer
+    employer: Kalbeck Ventures GmbH
+    url: https://www.gutmannfonds.at
+    devices:
+      browser:
+        addressBar: https://www.gutmannfonds.at
+        element: GutmannShowcaseBrowser
+      phone:
+        element: GutmannShowcasePhone
+
+  -
+    title: makeyourday *by Jollydays*
+    description: |
+      A single-page application built with **Angular 1**. This is an online
+      platform to get inspired for adventure holidays.
+    released: 2014
+    role: Frontend Engineer
+    employer: Jollydays GmbH
+    url: makeyourday.com
+    devices:
+      browser:
+        addressBar: https://makeyourday.com
+        element: MakeyoudayShowcaseBrowser
+      phone:
+        element: MakeyoudayShowcasePhone
+
+  -
+    title: YWAM Soroti
+    description: |
+      A website for a non-profit organisation in Uganda, based on **Drupal 7**.
+    release: 2014
+    role: Webdesigner, Frontend and Backend Developer
+    url: http://ywamsoroti.com
+    devices:
+      browser:
+        addressBar: http://www.ywamsoroti.com
+        element: YwamShowcaseBrowser
+      phone:
+        element: YwamShowcasePhone
+
+  -
+    title: Schweizer Illustrierte
+    description: |
+      An online magazine built with **Drupal 7**. Schweizer Illustrierte is
+      one of the biggest magazines in Switzerland.
+    release: 2013
+    role: Junior Application Engineer
+    employer: Unic AG
+    url: https://www.schweizer-illustrierte.ch
+    devices:
+      browser:
+        addressBar: https://www.schweizer-illustrierte.com
+        element: SchweizerIllustrierteShowcaseBrowser
+      phone:
+        element: SchweizerIllustrierteShowcasePhone
