@@ -14,7 +14,7 @@
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
     "lint": "yarn run lint:ts && yarn run lint:css",
-    "lint:ts": "tslint -t stylish -c tslint.json --project . 'src/**/*.ts{,x}'",
+    "lint:ts": "tslint -t stylish -c tslint.json --project . --config ./tslint.prod.json 'src/**/*.ts{,x}'",
     "lint:css": "stylelint './src/**/*.ts{,x}'"
   },
   "devDependencies": {
