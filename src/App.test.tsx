@@ -1,6 +1,5 @@
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
-import { mount } from 'enzyme';
 
 import App from './App';
 
@@ -9,21 +8,12 @@ titlescreen:
   title: Portfolio
   subtitle: of Henry Ford
   mail: henry [dot] ford [at] example [dot] com
-`
-
-const mockResponse = ( status, statusText, response ) => {
-  return new window.Response( response, {
-    status,
-    statusText,
-    headers: {
-      'Content-type': 'text/yaml',
-    },
-  } );
-};
+`;
 
 describe( 'App', () => {
   it( 'renders snapshot on data', ( done ) => {
-    fetch.mockResponse( mockContent );
+    // FIXME:
+    ( fetch as any ).mockResponse( mockContent );
 
     const renderedApp = renderer.create( <App /> );
     expect( renderedApp.toJSON() ).toMatchSnapshot();
@@ -34,7 +24,8 @@ describe( 'App', () => {
   } );
 
   it( 'renders snapshot on error', ( done ) => {
-    fetch.mockReject( new Error( 'some error' ) );
+    // FIXME:
+    ( fetch as any ).mockReject( new Error( 'some error' ) );
 
     const renderedApp = renderer.create( <App /> );
     expect( renderedApp.toJSON() ).toMatchSnapshot();
