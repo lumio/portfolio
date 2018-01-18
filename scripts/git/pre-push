@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+RED='\033[0;31m'
+YELLOW='\033[1;33m'
+GREEN='\033[1;32m'
+NC='\033[0m'
+
+check_result() {
+  # echo "$changed_files" | grep -E --quiet "$1" && eval "$2"
+    if [ $? -eq 0 ]; then
+       printf "${GREEN}✓${NC}  $1... ok\n"
+    else
+       printf "${RED}✘${NC}  $1... failed\n"
+       exit 1
+    fi
+}
+
+CI=0 yarn test
+check_result "tests"
+
+yarn lint:ts
+check_result "lint:ts"
+
+yarn lint:css
+check_result "lint:css"

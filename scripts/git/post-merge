@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+changedFiles="$(git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD)"
+
+checkChanges() {
+  for i in "$1"; do
+    echo "$changedFiles" | grep -E --quiet "$i" && eval "$2"
+  done
+}
+
+# `yarn` if the `package.json` file or scripts have been changed
+checkChanges "package.json scripts/git" yarn

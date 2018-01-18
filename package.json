@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "BROWSER=none react-scripts-ts start",
+    "postinstall": "cp ./scripts/git/* ./.git/hooks",
     "build": "react-scripts-ts build",
     "test": "CI=1 react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
