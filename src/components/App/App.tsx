@@ -1,9 +1,13 @@
 import * as React from 'react';
 import * as yaml from 'js-yaml';
 
-class App extends React.Component<any, any> {
-  constructor( props : any ) {
-    super( props );
+import { AppStateType } from './types';
+
+import TitleScreen from '../TitleScreen';
+
+class App extends React.Component<{}, AppStateType> {
+  constructor() {
+    super( {} );
 
     this.state = {
       pending: true,
@@ -48,6 +52,7 @@ class App extends React.Component<any, any> {
     return (
       <div>
         <h1>Hello world</h1>
+        <TitleScreen />
         <pre>{ JSON.stringify( this.state.data, null, 2 ) }</pre>
       </div>
     );
