@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders snapshot on data 1`] = `
+<div>
+  Pending
+</div>
+`;
+
+exports[`App renders snapshot on data 2`] = `
+<div>
+  <h1>
+    Hello world
+  </h1>
+  <pre>
+    {
+      "titlescreen": {
+        "title": "Portfolio",
+        "subtitle": "of Henry Ford",
+        "mail": "henry [dot] ford [at] example [dot] com"
+      }
+    }
+  </pre>
+</div>
+`;
+
+exports[`App renders snapshot on error 1`] = `
+<div>
+  Pending
+</div>
+`;
+
+exports[`App renders snapshot on error 2`] = `
+<div>
+  <strong>
+    error
+  </strong>
+</div>
+`;
