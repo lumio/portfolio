@@ -6,8 +6,8 @@ import { AppStateType } from './types';
 import TitleScreen from '../TitleScreen';
 
 class App extends React.Component<{}, AppStateType> {
-  constructor() {
-    super( {} );
+  constructor( props : {} ) {
+    super( props );
 
     this.state = {
       pending: true,
