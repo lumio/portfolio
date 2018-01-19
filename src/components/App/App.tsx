@@ -2,8 +2,8 @@ import * as React from 'react';
 import * as yaml from 'js-yaml';
 
 import { AppStateType } from './types';
-
-import TitleScreen from '../TitleScreen';
+import ErrorBoundary from '../ErrorBoundary';
+import SectionContainer from '../SectionContainer';
 
 class App extends React.Component<{}, AppStateType> {
   constructor( props : {} ) {
@@ -48,16 +48,6 @@ class App extends React.Component<{}, AppStateType> {
     );
   }
 
-  renderPortfolio() {
-    return (
-      <div>
-        <h1>Hello world</h1>
-        <TitleScreen />
-        <pre>{ JSON.stringify( this.state.data, null, 2 ) }</pre>
-      </div>
-    );
-  }
-
   render() {
     if ( this.state.pending ) {
       return this.renderPending();
@@ -67,7 +57,11 @@ class App extends React.Component<{}, AppStateType> {
       return this.renderError();
     }
 
-    return this.renderPortfolio();
+    return (
+      <ErrorBoundary>
+        <SectionContainer sections={ this.state.data } />
+      </ErrorBoundary>
+    );
   }
 }
 

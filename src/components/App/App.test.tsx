@@ -30,6 +30,7 @@ describe( 'App', () => {
     const renderedApp = renderer.create( <App /> );
     expect( renderedApp.toJSON() ).toMatchSnapshot();
     setTimeout( () => {
+      // FIXME: renders error
       expect( renderedApp.toJSON() ).toMatchSnapshot();
       done();
     }, 100 );
