@@ -27,8 +27,10 @@ class App extends React.Component<{}, AppStateType> {
         data: result,
       } ) )
       .catch( ( err ) => {
-        // tslint:disable-next-line
-        console.error( err );
+        if ( !process || !process.env || process.env.NODE_ENV !== 'test' ) {
+          // tslint:disable-next-line
+          console.error( err );
+        }
         this.setState( {
           pending: false,
           error: true,
