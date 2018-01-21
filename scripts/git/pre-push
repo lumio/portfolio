@@ -6,13 +6,12 @@ GREEN='\033[1;32m'
 NC='\033[0m'
 
 check_result() {
-  # echo "$changed_files" | grep -E --quiet "$1" && eval "$2"
-    if [ $? -eq 0 ]; then
-       printf "${GREEN}✓${NC}  $1... ok\n"
-    else
-       printf "${RED}✘${NC}  $1... failed\n"
-       exit 1
-    fi
+  if [ $? -eq 0 ]; then
+     printf "${GREEN}✓${NC}  $1... ok\n"
+  else
+     printf "${RED}✘${NC}  $1... failed\n"
+     exit 1
+  fi
 }
 
 CI=0 yarn test
