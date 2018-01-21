@@ -8,9 +8,15 @@ exports[`App renders snapshot on data 1`] = `
 
 exports[`App renders snapshot on data 2`] = `
 <div>
-  <div>
-    Title
-  </div>
+  <pre>
+    {
+      "data": {
+        "title": "Portfolio",
+        "subtitle": "of Henry Ford",
+        "mail": "henry [dot] ford [at] example [dot] com"
+      }
+    }
+  </pre>
 </div>
 `;
 
