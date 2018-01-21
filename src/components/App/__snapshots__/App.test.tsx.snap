@@ -7,16 +7,24 @@ exports[`App renders snapshot on data 1`] = `
 `;
 
 exports[`App renders snapshot on data 2`] = `
-<div>
-  <pre>
-    {
-      "data": {
-        "title": "Portfolio",
-        "subtitle": "of Henry Ford",
-        "mail": "henry [dot] ford [at] example [dot] com"
-      }
-    }
-  </pre>
+<div
+  className="sc-bdVaJa iZVVIW"
+>
+  <div>
+    <div
+      className="sc-bdVaJa gUbkqd"
+    >
+      <pre>
+        {
+          "data": {
+            "title": "Portfolio",
+            "subtitle": "of Henry Ford",
+            "mail": "henry [dot] ford [at] example [dot] com"
+          }
+        }
+      </pre>
+    </div>
+  </div>
 </div>
 `;
 
