@@ -8,5 +8,5 @@ checkChanges() {
   done
 }
 
-# `yarn` if the `package.json` file or scripts have been changed
+# Execute yarn if package.json or git hooks have been changed
 checkChanges "package.json scripts/git" yarn
