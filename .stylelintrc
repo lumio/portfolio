@@ -12,7 +12,7 @@
         "declaration-colon-newline-after": null,
         "declaration-block-semicolon-newline-after": null,
         "function-parentheses-space-inside": "always",
-        "indentation": 4,
+        "indentation": 2,
         "media-feature-parentheses-space-inside": "always",
         "no-duplicate-selectors": null,
         "no-invalid-double-slash-comments": null,
