@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as yaml from 'js-yaml';
+import SectionStyles from '../../globals/styles/SectionStyles';
 
 import { AppStateType } from './types';
 import ErrorBoundary from '../ErrorBoundary';
@@ -61,7 +62,9 @@ class App extends React.Component<{}, AppStateType> {
 
     return (
       <ErrorBoundary>
-        <SectionContainer sections={ this.state.data } />
+        <SectionStyles root>
+          <SectionContainer sections={ this.state.data } />
+        </SectionStyles>
       </ErrorBoundary>
     );
   }
