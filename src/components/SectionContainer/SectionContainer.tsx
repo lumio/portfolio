@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { SectionContainerPropsType } from './types';
 import TitleScreen from '../TitleScreen';
+import ProjectsContainer from '../ProjectsContainer';
 
 const sectionMap = {
   titlescreen: TitleScreen,
+  projects: ProjectsContainer,
 };
 
 const SectionContainer : React.StatelessComponent<SectionContainerPropsType> =
