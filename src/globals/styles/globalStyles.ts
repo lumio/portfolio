@@ -1,4 +1,5 @@
 import { injectGlobal } from 'styled-components';
+import images from '../static';
 
 export default injectGlobal`
   *, *::before, *::after {
@@ -9,5 +10,7 @@ export default injectGlobal`
 
   body {
     font: 1rem/1.3 sans-serif;
+    background: url( ${ images.backgroundImage } ) no-repeat fixed left bottom;
+    background-size: cover;
   }
 `;
