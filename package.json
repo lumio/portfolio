@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "react-scripts-ts start",
+    "start": "BROWSER=none react-scripts-ts start",
     "postinstall": "cp ./scripts/git/* ./.git/hooks",
     "build": "react-scripts-ts build",
     "test": "CI=1 react-scripts-ts test --env=jsdom",
