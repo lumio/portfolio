@@ -7,24 +7,16 @@ exports[`App renders snapshot on data 1`] = `
 `;
 
 exports[`App renders snapshot on data 2`] = `
-<div
-  className="sc-bdVaJa iZVVIW"
->
-  <div>
-    <div
-      className="sc-bdVaJa gUbkqd"
-    >
-      <pre>
-        {
-          "data": {
-            "title": "Portfolio",
-            "subtitle": "of Henry Ford",
-            "mail": "henry [dot] ford [at] example [dot] com"
-          }
-        }
-      </pre>
-    </div>
-  </div>
+<div>
+  <h1>
+    Ooops!
+  </h1>
+  <h2>
+    Something went wrong
+  </h2>
+  <pre>
+    TypeError: Cannot read property 'tablet' of undefined
+  </pre>
 </div>
 `;
 
