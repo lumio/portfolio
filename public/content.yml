@@ -2,6 +2,7 @@ titlescreen:
   title: Portfolio
   subtitle: of Benjamin Falk
   mail: benjamin [dot] falk [at] cyanjoe [dot] com
+  github: lumio
 projects:
   -
     title: wallboard
