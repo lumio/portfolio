@@ -24,6 +24,13 @@ export default injectGlobal`
     color: #000;
     padding: .25rem .5rem;
     margin: -.25rem -.5rem;
+    background: rgba( 0, 0, 0, 0 );
+    transform: scale( 1 );
+    transition: transform .1s;
+  }
+
+  a:active {
+    transform: scale( .95 );
   }
 
   a:hover {
