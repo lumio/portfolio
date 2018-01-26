@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as yaml from 'js-yaml';
 
-import SectionStyles from '../../globals/styles/SectionStyles';
+import SectionStyles from '../../common/styles/SectionStyles';
 import Background from '../Background';
 
 import { AppStateType } from './types';

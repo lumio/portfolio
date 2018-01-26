@@ -1,6 +1,6 @@
 import * as React from 'react';
+import SectionStyles from '../../common/styles/SectionStyles';
 import { ProjectPropsType } from './types';
-import SectionStyles from '../../globals/styles/SectionStyles';
 
 const Project : React.StatelessComponent<any> = ( props : ProjectPropsType ) => {
   return (

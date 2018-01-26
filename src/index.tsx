@@ -2,12 +2,12 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
 import { ThemeProvider } from 'styled-components';
-import theme from './globals/styles/theme';
+import theme from './common/styles/theme';
 
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 
-import './globals/styles/globalStyles';
+import './common/styles/globalStyles';
 
 ReactDOM.render(
   (
