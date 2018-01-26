@@ -3,13 +3,17 @@ const conversionTable = {
   at: '@',
 };
 const conversionCache = {};
+const conversionRegex = new RegExp(
+  '(\\s*\\[(' + Object.keys( conversionTable ).join( '|' ) + ')\\]\\s*)',
+  'ig'
+);
 
 const convertFakeEmailAddress = ( fakeMail : string ) : string => {
   if ( conversionCache[ fakeMail ] ) {
     return conversionCache[ fakeMail ];
   }
 
-  conversionCache[ fakeMail ] = fakeMail.replace( /(\s*\[(dot|at)\]\s*)/ig, ( _match, _m1, m2 ) => {
+  conversionCache[ fakeMail ] = fakeMail.replace( conversionRegex, ( _match, _m1, m2 ) => {
     if ( conversionTable[ m2 ] ) {
       return conversionTable[ m2 ];
     }
