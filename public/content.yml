@@ -74,7 +74,7 @@ projects:
     released: 2014
     role: Frontend Engineer
     employer: Jollydays GmbH
-    url: makeyourday.com
+    url: https://makeyourday.com
     devices:
       browser:
         addressBar: https://makeyourday.com
