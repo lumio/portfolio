@@ -7,17 +7,42 @@ exports[`App renders snapshot on data 1`] = `
 `;
 
 exports[`App renders snapshot on data 2`] = `
-<div>
-  <h1>
-    Ooops!
-  </h1>
-  <h2>
-    Something went wrong
-  </h2>
-  <pre>
-    TypeError: Cannot read property 'tablet' of undefined
-  </pre>
-</div>
+Array [
+  <div
+    className="sc-bdVaJa jfNWyr"
+>
+    <div>
+        <div
+            className="sc-bdVaJa fmcKRk"
+        >
+            <div
+                className="sc-htpNat itAZrY"
+            >
+                <div>
+                    <h1>
+                        Portfolio
+                    </h1>
+                    <h2>
+                        of Henry Ford
+                    </h2>
+                    <ul>
+                        <li>
+                            <a
+                                href="mailto:henry.ford@example.com"
+                            >
+                                henry.ford@example.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>,
+  <div
+    className="sc-bwzfXH dNmmcx"
+/>,
+]
 `;
 
 exports[`App renders snapshot on error 1`] = `

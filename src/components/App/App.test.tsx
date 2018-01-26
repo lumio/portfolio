@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
+import ThemeProvider from '../../common/styles/ThemeProvider';
 
 import App from './App';
 
@@ -15,7 +16,7 @@ describe( 'App', () => {
     // FIXME:
     ( fetch as any ).mockResponse( mockContent );
 
-    const renderedApp = renderer.create( <App /> );
+    const renderedApp = renderer.create( <ThemeProvider><App /></ThemeProvider> );
     expect( renderedApp.toJSON() ).toMatchSnapshot();
     setTimeout( () => {
       expect( renderedApp.toJSON() ).toMatchSnapshot();
@@ -27,7 +28,7 @@ describe( 'App', () => {
     // FIXME:
     ( fetch as any ).mockReject( new Error( 'some error' ) );
 
-    const renderedApp = renderer.create( <App /> );
+    const renderedApp = renderer.create( <ThemeProvider><App /></ThemeProvider> );
     expect( renderedApp.toJSON() ).toMatchSnapshot();
     setTimeout( () => {
       expect( renderedApp.toJSON() ).toMatchSnapshot();
