@@ -1,5 +1,6 @@
 interface DeviceElementPropsType {
   addressBar : string;
+  element : string;
 }
 
 interface DevicePropsType {

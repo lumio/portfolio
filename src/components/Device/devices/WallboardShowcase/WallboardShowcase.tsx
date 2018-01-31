@@ -4,7 +4,7 @@ import { DevicePropsType } from '../../types';
 const WallboardShowcase : React.StatelessComponent<DevicePropsType> =
   ( props : DevicePropsType ) => {
     return (
-      <div>WallboardShowcase</div>
+      <div>WallboardShowcase 🦄</div>
     );
   };
 

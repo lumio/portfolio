@@ -2,14 +2,16 @@ import * as React from 'react';
 import deviceList from './devices';
 import { DevicePropsType } from './types';
 
-const DeviceHOC = ( deviceType : string, deviceElement : string ) => {
-  if ( deviceList[ deviceElement ] ) {
-    return deviceList[ deviceElement ];
-  }
+const Device : React.StatelessComponent<DevicePropsType> =
+  ( props : DevicePropsType ) => {
+    const DeviceElement = deviceList[ props.device.element ];
+    if ( !DeviceElement ) {
+      return (
+        <p><strong>Error! Cannot find { props.device.element }</strong></p>
+      );
+    }
 
-  return ( props : DevicePropsType ) => (
-    <p><strong>Error! Cannot find { deviceElement }</strong></p>
-  );
-};
+    return <DeviceElement { ...props } />;
+  };
 
-export default DeviceHOC;
+export default Device;
