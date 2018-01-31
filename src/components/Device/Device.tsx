@@ -1,12 +1,15 @@
 import * as React from 'react';
+import deviceList from './devices';
 import { DevicePropsType } from './types';
 
 const DeviceHOC = ( deviceType : string, deviceElement : string ) => {
-  return ( props : DevicePropsType ) => {
-    return (
-      <div>Device { deviceType } { deviceElement }</div>
-    );
-  };
+  if ( deviceList[ deviceElement ] ) {
+    return deviceList[ deviceElement ];
+  }
+
+  return ( props : DevicePropsType ) => (
+    <p><strong>Error! Cannot find { deviceElement }</strong></p>
+  );
 };
 
 export default DeviceHOC;
