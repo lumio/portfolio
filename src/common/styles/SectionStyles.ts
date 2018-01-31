@@ -13,11 +13,11 @@ const SectionStyles = styled.div`
     props.root ? `
       z-index: 100;
       min-height: 100vh;
+      overflow-x: hidden;
     ` : `
       height: 100vh;
     `
   ) }
-  overflow-x: hidden;
 `;
 
 export default SectionStyles;
