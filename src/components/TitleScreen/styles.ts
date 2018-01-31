@@ -29,6 +29,10 @@ const TitleScreenStyles = styled.div`
   }
 
   ${ ( props : any ) => props.theme.media.tablet } {
+    div {
+      margin-top: -3rem;
+    }
+
     h1 {
       font-size: 7rem;
     }
