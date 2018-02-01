@@ -38,4 +38,12 @@ export default injectGlobal`
     background: #000;
     text-decoration: none;
   }
+
+  strong {
+    font-weight: 600;
+  }
+
+  h1, p {
+    margin-bottom: 1.6rem;
+  }
 `;
