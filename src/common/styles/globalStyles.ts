@@ -1,5 +1,4 @@
 import { injectGlobal } from 'styled-components';
-import images from '../static';
 
 export default injectGlobal`
   *, *::before, *::after {
@@ -15,8 +14,6 @@ export default injectGlobal`
   body {
     font: 1.4rem/1.3 Raleway, sans-serif;
     font-variant-ligatures: common-ligatures;
-    background: url( ${ images.backgroundImage } ) no-repeat fixed left bottom;
-    background-size: cover;
   }
 
   a, a:link, a:visited {
