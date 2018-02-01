@@ -10,7 +10,7 @@ const TitleScreenStyles = styled.div`
 
   > div {
     text-align: right;
-    margin-top: -1rem;
+    margin-top: -10vh;
   }
 
   ul {

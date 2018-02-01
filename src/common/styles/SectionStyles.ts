@@ -16,6 +16,7 @@ const SectionStyles = styled.div`
       overflow-x: hidden;
     ` : `
       height: 100vh;
+      overflow: hidden;
     `
   ) }
 `;

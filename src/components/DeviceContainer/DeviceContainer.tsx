@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { DeviceContainerPropsType } from './types';
+import { DeviceContainerStyles } from './styles';
 import Device from '../Device';
 import DeviceBordersHOC from '../DeviceBorders';
 
@@ -10,7 +11,7 @@ const DeviceContainer : React.StatelessComponent<DeviceContainerPropsType> =
     }
 
     return (
-      <div>
+      <DeviceContainerStyles>
         { Object.keys( props.devices ).map( ( deviceType : string ) => {
           const device = props.devices[ deviceType ];
           const DeviceBordersElement = DeviceBordersHOC( deviceType, device.element );
@@ -20,7 +21,7 @@ const DeviceContainer : React.StatelessComponent<DeviceContainerPropsType> =
             </DeviceBordersElement>
           );
         } ) }
-      </div>
+      </DeviceContainerStyles>
     );
   };
 
