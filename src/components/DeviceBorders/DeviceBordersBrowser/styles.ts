@@ -56,12 +56,22 @@ const DeviceBordersBrowserStyles = styled.div`
       border: 1px solid #d7d7d7;
       border-radius: .5rem;
       padding: .3rem .4rem;
+
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     a, a:link, a:hover {
       color: #000;
       text-decoration: none;
       background: none;
+      font-weight: 600;
+    }
+
+    i {
+      font-weight: 400;
+      font-style: normal;
     }
   }
 `;
