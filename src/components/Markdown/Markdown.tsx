@@ -7,7 +7,7 @@ const Markdown : React.StatelessComponent<MarkdownPropsType> = ( props : Markdow
     return null;
   }
 
-  return <ReactMarkdown source={ props.source } />;
+  return <ReactMarkdown className={ props.className } source={ props.source } />;
 };
 
 export default Markdown;

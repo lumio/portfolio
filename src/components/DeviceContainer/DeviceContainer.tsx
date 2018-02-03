@@ -11,7 +11,7 @@ const DeviceContainer : React.StatelessComponent<DeviceContainerPropsType> =
     }
 
     return (
-      <DeviceContainerStyles>
+      <DeviceContainerStyles className={ props.className }>
         { Object.keys( props.devices ).map( ( deviceType : string ) => {
           const device = props.devices[ deviceType ];
           const DeviceBordersElement = DeviceBordersHOC( deviceType, device.element );
