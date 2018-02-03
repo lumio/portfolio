@@ -66,7 +66,7 @@ const DeviceBordersBrowserStyles = styled.div`
       color: #000;
       text-decoration: none;
       background: none;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     i {

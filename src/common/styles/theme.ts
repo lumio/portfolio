@@ -1,6 +1,6 @@
 const theme = {
   media: {
-    tablet: '@media ( min-width: 80rem )',
+    tablet: '@media ( min-width: 50rem )',
     desktop: '@media ( min-width: 100rem )',
   },
 };

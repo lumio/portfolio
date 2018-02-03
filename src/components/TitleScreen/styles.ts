@@ -19,7 +19,7 @@ const TitleScreenStyles = styled.div`
 
   h1 {
     font-size: 14vmin;
-    font-weight: normal;
+    font-weight: 500;
     line-height: 1;
   }
 

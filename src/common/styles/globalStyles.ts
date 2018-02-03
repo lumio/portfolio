@@ -37,7 +37,7 @@ export default injectGlobal`
   }
 
   strong {
-    font-weight: 600;
+    font-weight: 700;
   }
 
   h1, p {
