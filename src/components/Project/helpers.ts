@@ -1,9 +1,6 @@
 import { ProjectType } from './types';
 
 const partTransforms = {
-  title: {
-    prefix: '# ',
-  },
   description: {},
   released: {
     prefix: 'Released in  \n**',

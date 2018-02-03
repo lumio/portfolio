@@ -13,8 +13,18 @@ const Project : React.StatelessComponent<any> = ( props : ProjectPropsType ) => 
   return (
     <SectionStyles>
       <ProjectStyles>
-        <Markdown source={ concatParts( project ) } />
-        <DeviceContainer devices={ project.devices } />
+        <Markdown
+          className='Project__title'
+          source={ `# ${ project.title }` }
+        />
+        <Markdown
+          className='Project__description'
+          source={ concatParts( project ) }
+        />
+        <DeviceContainer
+          className='Project__showcase'
+          devices={ project.devices }
+        />
       </ProjectStyles>
     </SectionStyles>
   );
