@@ -14,15 +14,15 @@ const Project : React.StatelessComponent<any> = ( props : ProjectPropsType ) => 
     <SectionStyles>
       <ProjectStyles>
         <Markdown
-          className='Project__title'
+          className='project__title'
           source={ `# ${ project.title }` }
         />
         <Markdown
-          className='Project__description'
+          className='project__description'
           source={ concatParts( project ) }
         />
         <DeviceContainer
-          className='Project__showcase'
+          className='project__showcase'
           devices={ project.devices }
         />
       </ProjectStyles>

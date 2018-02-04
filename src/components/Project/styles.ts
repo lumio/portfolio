@@ -17,16 +17,16 @@ const ProjectStyles = styled.section`
     }
   }
 
-  > .Project__title {
+  > .project__title {
     grid-area: header;
     align-self: end;
   }
 
-  > .Project__description {
+  > .project__description {
     grid-area: description;
   }
 
-  > .Project__showcase {
+  > .project__showcase {
     grid-area: showcase;
   }
 
