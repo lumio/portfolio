@@ -9,11 +9,11 @@ exports[`App renders snapshot on data 1`] = `
 exports[`App renders snapshot on data 2`] = `
 Array [
   <div
-    className="sc-bdVaJa fWGfUB"
+    className="sc-bdVaJa uWupJ"
 >
     <div>
         <div
-            className="sc-bdVaJa dRBObQ"
+            className="sc-bdVaJa fUdMCh"
         >
             <div
                 className="sc-htpNat eaJjUC"
