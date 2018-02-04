@@ -9,6 +9,8 @@ const SectionStyles = styled.div`
   position: relative;
 
   width: 100%;
+  max-width: 110rem;
+  margin: 0 auto;
   ${ ( props ) => (
     props.root ? `
       z-index: 100;

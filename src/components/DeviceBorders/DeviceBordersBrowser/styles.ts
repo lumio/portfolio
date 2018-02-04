@@ -74,6 +74,30 @@ const DeviceBordersBrowserStyles = styled.div`
       font-style: normal;
     }
   }
+
+  ${ ( props ) => props.theme.media.tablet } {
+    max-height: 50vh;
+    .device-borders__title {
+      min-height: 3rem;
+      padding: .8rem 1.3rem;
+    }
+
+    .device-borders__ctrl {
+      width: 1.2rem;
+      height: 1.2rem;
+      border-radius: .6rem;
+    }
+
+    .device-borders__addressbar {
+      padding: .7rem 1rem;
+      font-size: 1.2rem;
+
+      span {
+        padding: .9rem 1.2rem;
+        border-radius: .75rem;
+      }
+    }
+  }
 `;
 
 export { DeviceBordersBrowserStyles };
