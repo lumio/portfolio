@@ -3,10 +3,10 @@ interface ScrollerPropsType {
 }
 
 interface ScrollerStateType {
-  currentSection : number;
-  sectionCount : number;
   documentHeight : number;
   viewportHeight : number;
+  sectionCount : number;
+  currentSection : number;
 }
 
 export { ScrollerPropsType, ScrollerStateType };

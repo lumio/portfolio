@@ -4,19 +4,7 @@ import { ScrollerPropsType, ScrollerStateType } from './types';
 
 class Scroller extends React.Component<ScrollerPropsType, ScrollerStateType> {
   isComponentMounted : boolean = false;
-
-  onScrollEvent = debounce( () => {
-    if ( !this.isComponentMounted ) {
-      return;
-    }
-
-    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    const pagePos = scrollTop / this.state.viewportHeight;
-    const prevSection = Math.floor( pagePos );
-    const shouldBeNextSection = ( pagePos - prevSection ) > .5;
-    const newSection = shouldBeNextSection ? prevSection + 1 : prevSection;
-    window.scrollTo( 0, newSection * this.state.viewportHeight );
-  }, 1000 );
+  touchStart : number = 0;
 
   onResizeEvent = debounce( () => {
     if ( !this.isComponentMounted ) {
@@ -29,23 +17,25 @@ class Scroller extends React.Component<ScrollerPropsType, ScrollerStateType> {
   constructor( props : ScrollerPropsType ) {
     super( props );
     this.state = {
-      currentSection: 0,
-      sectionCount: 1,
       documentHeight: 1,
       viewportHeight: 1,
+      sectionCount: 1,
+      currentSection: 0,
     };
   }
 
   componentDidMount() {
     this.isComponentMounted = true;
-    window.addEventListener( 'scroll', this.onScrollEvent );
+    window.addEventListener( 'touchstart', this.onTouchStartEvent, { passive: false } );
+    window.addEventListener( 'touchend', this.onTouchEndEvent );
     window.addEventListener( 'resize', this.onResizeEvent );
     this.recalculateContainerCount();
   }
 
   componentWillUnmount() {
     this.isComponentMounted = false;
-    window.removeEventListener( 'scroll', this.onScrollEvent );
+    window.removeEventListener( 'touchstart', this.onTouchStartEvent );
+    window.removeEventListener( 'touchend', this.onTouchEndEvent );
     window.removeEventListener( 'resize', this.onResizeEvent );
   }
 
@@ -63,15 +53,41 @@ class Scroller extends React.Component<ScrollerPropsType, ScrollerStateType> {
     );
 
     this.setState( {
-      sectionCount: Math.ceil( documentHeight / viewportHeight ),
       documentHeight,
       viewportHeight,
+      sectionCount: Math.round( documentHeight / viewportHeight ),
     } );
+  }
+
+  scrollToSection( section : number ) {
+    const currentSection = Math.max(
+      0,
+      Math.min( this.state.sectionCount - 1, section )
+    );
+    this.setState( {
+      currentSection,
+    } );
+    console.log( currentSection );
   }
 
   render() {
     return this.props.children;
   }
+
+  onTouchStartEvent = ( evt : any ) => {
+    const touch = evt.changedTouches[ 0 ];
+    const y = Math.max( touch.clientY, touch.pageY );
+    this.touchStart = y;
+    evt.preventDefault();
+  }
+
+  onTouchEndEvent = ( evt : any ) => {
+    const touch = evt.changedTouches[ 0 ];
+    const y = Math.max( touch.clientY, touch.pageY );
+    const nextSection = ( y - this.touchStart ) < 0;
+    this.scrollToSection( this.state.currentSection + ( nextSection ? 1 : -1 ) );
+  }
+
 }
 
 export default Scroller;
