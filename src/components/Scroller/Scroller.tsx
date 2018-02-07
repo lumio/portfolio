@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { debounce } from 'lodash';
+import { polyfill as smoothscroll } from 'smoothscroll-polyfill';
 import { ScrollerPropsType, ScrollerStateType } from './types';
+
+smoothscroll();
 
 class Scroller extends React.Component<ScrollerPropsType, ScrollerStateType> {
   isComponentMounted : boolean = false;
@@ -67,7 +70,11 @@ class Scroller extends React.Component<ScrollerPropsType, ScrollerStateType> {
     this.setState( {
       currentSection,
     } );
-    console.log( currentSection );
+    window.scroll( {
+      left: 0,
+      top: currentSection * this.state.viewportHeight,
+      behavior: 'smooth',
+    } );
   }
 
   render() {

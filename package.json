@@ -19,6 +19,7 @@
     "react-dom": "^16.2.0",
     "react-markdown": "^3.1.4",
     "react-scripts-ts": "2.12.0",
+    "smoothscroll-polyfill": "^0.4.0",
     "styled-components": "^2.4.0"
   },
   "devDependencies": {
@@ -30,6 +31,7 @@
     "@types/react": "^16.0.34",
     "@types/react-dom": "^16.0.3",
     "@types/react-test-renderer": "^16.0.0",
+    "@types/smoothscroll-polyfill": "^0.3.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest-fetch-mock": "^1.4.0",
