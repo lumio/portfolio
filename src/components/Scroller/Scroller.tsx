@@ -7,7 +7,8 @@ smoothscroll();
 
 class Scroller extends React.Component<ScrollerPropsType, ScrollerStateType> {
   isComponentMounted : boolean = false;
-  touchStart : number = 0;
+  touchStartPos : number = 0;
+  touchStartTime : number = 0;
 
   onResizeEvent = debounce( () => {
     if ( !this.isComponentMounted ) {
@@ -84,14 +85,20 @@ class Scroller extends React.Component<ScrollerPropsType, ScrollerStateType> {
   onTouchStartEvent = ( evt : any ) => {
     const touch = evt.changedTouches[ 0 ];
     const y = Math.max( touch.clientY, touch.pageY );
-    this.touchStart = y;
+    this.touchStartPos = y;
+    this.touchStartTime = Date.now();
     evt.preventDefault();
   }
 
   onTouchEndEvent = ( evt : any ) => {
+    const now = Date.now();
+    if ( now - this.touchStartTime > 1500 ) {
+      return;
+    }
+
     const touch = evt.changedTouches[ 0 ];
     const y = Math.max( touch.clientY, touch.pageY );
-    const nextSection = ( y - this.touchStart ) < 0;
+    const nextSection = ( y - this.touchStartPos ) < 0;
     this.scrollToSection( this.state.currentSection + ( nextSection ? 1 : -1 ) );
   }
 
