@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const DeviceBordersPhoneStyles = styled.div`
   position: absolute;
   right: 4vw;
-  top: 6rem;
+  bottom: 6rem;
 
   width: 27.5vmin;
   height: 52.25vmin;

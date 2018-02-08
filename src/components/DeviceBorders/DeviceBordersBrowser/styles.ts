@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 const DeviceBordersBrowserStyles = styled.div`
   width: 100%;
-  height: 60vw;
-  max-height: 30vh;
+  height: 70vw;
+  max-height: 45rem;
   background: #fff;
   border: 1px solid #ccc;
   border-radius: .8rem;
@@ -76,7 +76,7 @@ const DeviceBordersBrowserStyles = styled.div`
   }
 
   ${ ( props ) => props.theme.media.tablet } {
-    max-height: 50vh;
+    max-height: 50rem;
     .device-borders__title {
       min-height: 3rem;
       padding: .8rem 1.3rem;
