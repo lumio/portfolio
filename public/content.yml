@@ -3,6 +3,7 @@ titlescreen:
   subtitle: of Benjamin Falk
   mail: benjamin [dot] falk [at] cyanjoe [dot] com
   github: lumio
+  repository: https://github.com/lumio/portfolio
 projects:
   -
     title: wallboard

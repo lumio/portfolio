@@ -16,7 +16,7 @@ Array [
             className="sc-bdVaJa fUdMCh"
         >
             <div
-                className="sc-htpNat eaJjUC"
+                className="sc-htpNat hYeIMI"
             >
                 <div>
                     <h1>
@@ -35,6 +35,7 @@ Array [
                         </li>
                     </ul>
                 </div>
+                <footer />
             </div>
         </div>
     </div>

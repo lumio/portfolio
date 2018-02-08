@@ -8,12 +8,12 @@ import { TitleScreenStyles } from './styles';
 
 const TitleScreen : React.StatelessComponent<TitleScreenPropsType> =
   ( props : TitleScreenPropsType ) => {
-    const { mail, github } = props.data;
+    const { mail, github, repository } = props.data;
     const githubUrl = github && `https://github.com/${ github }`;
-    const ElMail = mail ? <li><Email mail={ mail } /></li> : null;
-    const ElGitHub = githubUrl ? (
-      <li><a href={ githubUrl }>{ trimProtocol( githubUrl ) }</a></li>
-    ) : null;
+    const list = [
+      mail ? <Email mail={ mail } /> : null,
+      githubUrl ? <a href={ githubUrl }>{ trimProtocol( githubUrl ) }</a> : null,
+    ];
 
     return (
       <SectionStyles>
@@ -22,10 +22,16 @@ const TitleScreen : React.StatelessComponent<TitleScreenPropsType> =
             <h1>{ props.data.title }</h1>
             <h2>{ props.data.subtitle }</h2>
             <ul>
-              { ElMail }
-              { ElGitHub }
+              { list.filter( ( item ) => item ).map( ( item, index ) => (
+                <li key={ index }>{ item }</li>
+              ) ) }
             </ul>
           </div>
+          <footer>
+            { repository ? (
+              <a href={ repository }>🦄</a>
+            ) : null }
+          </footer>
         </TitleScreenStyles>
       </SectionStyles>
     );

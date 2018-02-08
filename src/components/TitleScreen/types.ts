@@ -3,6 +3,7 @@ interface TitleScreenType {
   subtitle? : string;
   mail? : string;
   github? : string;
+  repository? : string;
 }
 
 interface TitleScreenPropsType {

@@ -28,6 +28,36 @@ const TitleScreenStyles = styled.div`
     font-weight: 400;
   }
 
+  footer {
+    position: absolute;
+    right: 1.15em;
+    bottom: 1em;
+
+    > a {
+      display: inline-flex;
+      width: 4rem;
+      height: 4rem;
+      align-items: center;
+      justify-content: center;
+
+      text-decoration: none;
+      padding-right: .75rem;
+
+      opacity: .5;
+      transition: opacity .5s, transform .5s ease;
+
+      &:hover {
+        opacity: 1;
+        transform: scale( 1.2 );
+      }
+
+      &:active {
+        transform: scale( .9 );
+        transition: transform .2s ease;
+      }
+    }
+  }
+
   ${ ( props : any ) => props.theme.media.tablet } {
     div {
       margin-top: -3rem;
