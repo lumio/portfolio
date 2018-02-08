@@ -4,7 +4,10 @@ import Email from '../Email';
 import { trimProtocol } from '../../common/helpers';
 
 import { TitleScreenPropsType } from './types';
-import { TitleScreenStyles } from './styles';
+import {
+  TitleScreenStyles,
+  TitleScreenRepositoryLink,
+} from './styles';
 
 const TitleScreen : React.StatelessComponent<TitleScreenPropsType> =
   ( props : TitleScreenPropsType ) => {
@@ -16,7 +19,7 @@ const TitleScreen : React.StatelessComponent<TitleScreenPropsType> =
     ];
 
     return (
-      <SectionStyles>
+      <SectionStyles wide>
         <TitleScreenStyles>
           <div>
             <h1>{ props.data.title }</h1>
@@ -27,11 +30,9 @@ const TitleScreen : React.StatelessComponent<TitleScreenPropsType> =
               ) ) }
             </ul>
           </div>
-          <footer>
-            { repository ? (
-              <a href={ repository }>🦄</a>
-            ) : null }
-          </footer>
+          { repository ? (
+            <TitleScreenRepositoryLink href={ repository }>🦄</TitleScreenRepositoryLink>
+          ) : null }
         </TitleScreenStyles>
       </SectionStyles>
     );

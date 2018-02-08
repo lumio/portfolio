@@ -9,14 +9,14 @@ exports[`App renders snapshot on data 1`] = `
 exports[`App renders snapshot on data 2`] = `
 Array [
   <div
-    className="sc-bdVaJa uWupJ"
+    className="sc-bdVaJa ikxqja"
 >
     <div>
         <div
-            className="sc-bdVaJa fUdMCh"
+            className="sc-bdVaJa giqAzt"
         >
             <div
-                className="sc-htpNat hYeIMI"
+                className="sc-htpNat eaJjUC"
             >
                 <div>
                     <h1>
@@ -35,7 +35,6 @@ Array [
                         </li>
                     </ul>
                 </div>
-                <footer />
             </div>
         </div>
     </div>

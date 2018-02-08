@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 interface SectionStylesPropsType {
   root? : boolean;
+  wide? : boolean;
 }
 
 const SectionStyles = styled.div`
@@ -9,7 +10,7 @@ const SectionStyles = styled.div`
   position: relative;
 
   width: 100%;
-  max-width: 110rem;
+  max-width: ${ ( props ) => props.root || props.wide ? '100%' : '110rem' };
   margin: 0 auto;
   ${ ( props ) => (
     props.root ? `
