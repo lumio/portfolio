@@ -34,12 +34,16 @@ const ProjectStyles = styled.section`
     padding: 3rem 4rem;
     grid-template:
       [row1-start] ". header" 1fr [row1-end]
-      [row2-start] "description showcase" 4fr
+      [row2-start] "description showcase" 4fr [row2-end]
       / 1fr 2fr;
     grid-gap: 1rem 1rem;
 
     h1 {
       font-size: 3.6em;
+    }
+
+    > .project__description {
+      margin-top: 6.25em;
     }
   }
 `;

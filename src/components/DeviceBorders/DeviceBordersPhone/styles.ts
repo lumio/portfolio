@@ -2,16 +2,15 @@ import styled from 'styled-components';
 
 const DeviceBordersPhoneStyles = styled.div`
   position: absolute;
-  right: 2rem;
-  bottom: 0;
-  transform: scale( .7 );
+  right: 4vw;
+  top: 6rem;
 
-  width: 50vmin;
-  height: 90vmin;
-  padding: 12vmin 2vmin;
+  width: 27.5vmin;
+  height: 52.25vmin;
+  padding: 6.6vmin 1.1vmin;
 
   border: 1px solid #ccc;
-  border-radius: 5vmin;
+  border-radius: 2.75vmin;
   background: #e9e8e4;
   background: linear-gradient( to bottom, #f2f3f4 0%, #d6d8db 100% );
   box-shadow: 0 0 1rem rgba( 0, 0, 0, .15 );
@@ -22,15 +21,15 @@ const DeviceBordersPhoneStyles = styled.div`
     display: block;
     position: absolute;
     left: 50%;
-    top: 7vmin;
-    margin-left: -4.5vmin;
+    top: 3.85vmin;
+    margin-left: -2.475vmin;
 
-    width: 9vmin;
-    height: 2vmin;
+    width: 4.95vmin;
+    height: 1.1vmin;
 
     background: #ced1d4;
     border: 1px solid #b9bcc0;
-    border-radius: 2vmin;
+    border-radius: 1.1vmin;
   }
 
   &::after {
@@ -39,15 +38,15 @@ const DeviceBordersPhoneStyles = styled.div`
     display: block;
     position: absolute;
     left: 50%;
-    bottom: 1.75vmin;
-    margin-left: -4.25vmin;
+    bottom: .9625vmin;
+    margin-left: -2.3374vmin;
 
-    width: 8.5vmin;
-    height: 8.5vmin;
+    width: 4.675vmin;
+    height: 4.675vmin;
 
     background: #ccc;
     border: 1px solid #b3b3b3;
-    border-radius: 5vmin;
+    border-radius: 2.75vmin;
   }
 
   .device-borders__inner {
