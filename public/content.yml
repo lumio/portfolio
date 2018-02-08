@@ -40,7 +40,7 @@ projects:
     description: |
       Proof of concept on how to access the microphone or a sound file and
       **visualize sound** and its frequencies using **HTML5** and
-      **AudioContext**.
+      **Web Audio**.
 
       For the visualization itself, **styled-components** are being used with
       CSS transitions.
