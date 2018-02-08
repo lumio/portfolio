@@ -1,4 +1,5 @@
 import { injectGlobal } from 'styled-components';
+import theme from './theme';
 
 export default injectGlobal`
   *, *::before, *::after {
@@ -42,5 +43,12 @@ export default injectGlobal`
 
   h1, p {
     margin-bottom: 1.6rem;
+  }
+
+  ${ theme.media.tablet } {
+    body {
+      font-size: 1.6rem;
+      line-height: 1.4;
+    }
   }
 `;
