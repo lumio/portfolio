@@ -15,6 +15,11 @@ const DeviceBordersPhoneStyles = styled.div`
   background: linear-gradient( to bottom, #f2f3f4 0%, #d6d8db 100% );
   box-shadow: 0 0 1rem rgba( 0, 0, 0, .15 );
 
+  img {
+    width: 100%;
+    height: auto;
+  }
+
   &::before {
     content: '';
 

@@ -10,6 +10,11 @@ const DeviceBordersBrowserStyles = styled.div`
   box-shadow: 0 0 1rem rgba( 0, 0, 0, .15 );
   overflow: hidden;
 
+  img {
+    width: 100%;
+    height: auto;
+  }
+
   .device-borders__title {
     min-height: 2rem;
     padding: .1rem .6rem 0;
