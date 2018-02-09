@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { DevicePropsType } from '../../types';
+const screenshotUrl = require( './screenshot.jpg' );
 
-const WallboardShowcase : React.StatelessComponent<DevicePropsType> =
+const SchweizerIllustrierteShowcaseBrowser : React.StatelessComponent<DevicePropsType> =
   ( props : DevicePropsType ) => {
     return (
-      <div>Schweizer Illustrierte Browser</div>
+      <div><img src={ screenshotUrl } /></div>
     );
   };
 
-export default WallboardShowcase;
+export default SchweizerIllustrierteShowcaseBrowser;

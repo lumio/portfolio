@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { DevicePropsType } from '../../types';
-import { DubfShowcaseBrowserStyles } from './styles';
+import { GutmannShowcaseBrowserStyles } from './styles';
 
-const DubfShowcaseBrowser : React.StatelessComponent<DevicePropsType> =
+const GutmannShowcaseBrowser : React.StatelessComponent<DevicePropsType> =
   ( props : DevicePropsType ) => {
     return (
-      <DubfShowcaseBrowserStyles />
+      <GutmannShowcaseBrowserStyles />
     );
   };
 
-export default DubfShowcaseBrowser;
+export default GutmannShowcaseBrowser;

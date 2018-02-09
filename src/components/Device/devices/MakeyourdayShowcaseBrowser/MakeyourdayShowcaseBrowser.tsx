@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { DevicePropsType } from '../../types';
-import { DubfShowcaseBrowserStyles } from './styles';
+import { MakeyourdayShowcaseBrowserStyles } from './styles';
 
 const MakeyourdayShowcaseBrowser : React.StatelessComponent<DevicePropsType> =
   ( props : DevicePropsType ) => {
     return (
-      <DubfShowcaseBrowserStyles />
+      <MakeyourdayShowcaseBrowserStyles />
     );
   };
 
