@@ -39,8 +39,8 @@ projects:
     title: waveblock
     description: |
       Proof of concept on how to access the microphone or a sound file and
-      **visualize sound** and its frequencies using **HTML5** and
-      **Web Audio**.
+      **visualize sound** and its frequencies using **HTML5** and the
+      **Web Audio API**.
 
       For the visualization itself, **styled-components** are being used with
       CSS transitions.
@@ -79,9 +79,9 @@ projects:
     devices:
       browser:
         addressBar: https://makeyourday.com
-        element: MakeyoudayShowcaseBrowser
+        element: MakeyourdayShowcaseBrowser
       phone:
-        element: MakeyoudayShowcasePhone
+        element: MakeyourdayShowcasePhone
 
   -
     title: YWAM Soroti
