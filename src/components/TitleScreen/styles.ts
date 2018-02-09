@@ -44,31 +44,31 @@ const TitleScreenStyles = styled.div`
 `;
 
 const TitleScreenRepositoryLink = styled.a`
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
 
-    position: absolute;
-    right: 1.15em;
-    bottom: 1em;
-    width: 4rem;
-    height: 4rem;
+  position: absolute;
+  right: 1.15em;
+  bottom: 1em;
+  width: 4rem;
+  height: 4rem;
 
-    text-decoration: none;
-    padding: 0 .35rem 0 0 !important;
+  text-decoration: none;
+  padding: 0 .35rem 0 0 !important;
 
-    opacity: .5;
-    transition: opacity .5s, transform .5s ease;
+  opacity: .5;
+  transition: opacity .5s, transform .5s ease;
 
-    &:hover {
-      opacity: 1;
-      transform: scale( 1.2 );
-    }
+  &:hover {
+    opacity: 1;
+    transform: scale( 1.2 );
+  }
 
-    &:active {
-      transform: scale( .9 );
-      transition: transform .2s ease;
-    }
+  &:active {
+    transform: scale( .9 );
+    transition: transform .2s ease;
+  }
 `;
 
 export {
