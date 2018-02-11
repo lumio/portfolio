@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Project from '../Project';
-import { debounce } from 'lodash';
+import { throttle } from 'lodash';
 
 import {
   ProjectsContainerPropsType,
@@ -9,7 +9,7 @@ import {
 
 class ProjectsContainer extends React.Component<ProjectsContainerPropsType, ProjectsContainerStateType> {
   dom : HTMLElement | null;
-  onScroll = debounce( ( evt? : any ) => {
+  onScroll = throttle( ( evt? : any ) => {
     if ( !this.dom ) {
       return;
     }
@@ -21,7 +21,7 @@ class ProjectsContainer extends React.Component<ProjectsContainerPropsType, Proj
       window.innerHeight || 0
     );
     this.setState( { scrollTop, viewportHeight } );
-  }, 150 );
+  }, 100 );
 
   constructor( props : ProjectsContainerPropsType ) {
     super( props );
