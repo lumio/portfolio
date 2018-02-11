@@ -4,4 +4,12 @@ interface ProjectsContainerPropsType {
   data : ProjectType[];
 }
 
-export { ProjectsContainerPropsType };
+interface ProjectsContainerStateType {
+  scrollTop : number;
+  viewportHeight : number;
+}
+
+export {
+  ProjectsContainerPropsType,
+  ProjectsContainerStateType,
+};

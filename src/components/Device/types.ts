@@ -5,6 +5,7 @@ interface DeviceElementPropsType {
 
 interface DevicePropsType {
   device : DeviceElementPropsType;
+  scrollPercent : number;
 }
 
 export {

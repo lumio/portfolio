@@ -17,7 +17,7 @@ const DeviceContainer : React.StatelessComponent<DeviceContainerPropsType> =
           const DeviceBordersElement = DeviceBordersHOC( deviceType, device.element );
           return (
             <DeviceBordersElement key={ deviceType } addressBar={ device.addressBar }>
-              <Device device={ device } />
+              <Device device={ device } scrollPercent={ props.scrollPercent } />
             </DeviceBordersElement>
           );
         } ) }

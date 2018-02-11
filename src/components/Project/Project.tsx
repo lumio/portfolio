@@ -9,6 +9,7 @@ import { concatParts } from './helpers';
 
 const Project : React.StatelessComponent<any> = ( props : ProjectPropsType ) => {
   const { project } = props;
+  const scrollPercent = 1 + ( props.scrollTop / props.viewportHeight );
 
   return (
     <SectionStyles>
@@ -24,6 +25,7 @@ const Project : React.StatelessComponent<any> = ( props : ProjectPropsType ) => 
         <DeviceContainer
           className='project__showcase'
           devices={ project.devices }
+          scrollPercent={ scrollPercent }
         />
       </ProjectStyles>
     </SectionStyles>
