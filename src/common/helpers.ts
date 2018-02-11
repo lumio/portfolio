@@ -14,7 +14,34 @@ const convertUrlToLink = ( content : string, keepProtocol : boolean = false, tag
   );
 };
 
+const convertScale = (
+  input : number,
+  inputScale : [ number, number ],
+  outputScale : [ number, number ],
+  trim : boolean = false
+) : number => {
+  const inBase = input - inputScale[ 0 ];
+  const inMax = inputScale[ 1 ] - inputScale[ 0 ];
+  const percentage = inBase / inMax;
+
+  const outMax = outputScale[ 1 ] - outputScale[ 0 ];
+  const result = percentage * outMax + outputScale[ 0 ];
+
+  if ( trim ) {
+    const min = Math.min.apply( null, outputScale );
+    const max = Math.max.apply( null, outputScale );
+
+    return Math.max(
+      Math.min( max, result ),
+      min
+    );
+  }
+
+  return result;
+};
+
 export {
   trimProtocol,
   convertUrlToLink,
+  convertScale,
 };
