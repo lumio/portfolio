@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { DevicePropsType } from '../../types';
 import { WallboardShowcaseStyles } from './styles';
-const screenshotUrl = require( './screenshot.jpg' );
 
 import { convertScale } from '../../../../common/helpers';
+import WallboardItem from './WallboardItem';
 
 const WallboardShowcase : React.StatelessComponent<DevicePropsType> =
   ( props : DevicePropsType ) => {
@@ -16,7 +16,13 @@ const WallboardShowcase : React.StatelessComponent<DevicePropsType> =
 
     return (
       <WallboardShowcaseStyles>
-        <img src={ screenshotUrl } alt='Wallboard' />
+        <WallboardItem
+          name='wallboard'
+        />
+        <WallboardItem
+          name='wallboard-test'
+          progress={ progress }
+        />
       </WallboardShowcaseStyles>
     );
   };
