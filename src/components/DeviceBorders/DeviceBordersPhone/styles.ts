@@ -4,6 +4,7 @@ const DeviceBordersPhoneStyles = styled.div`
   position: absolute;
   right: 4vw;
   bottom: 6rem;
+  z-index: 200;
 
   width: 27.5vmin;
   height: 52.25vmin;
