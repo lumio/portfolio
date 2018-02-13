@@ -38,7 +38,7 @@ const DubfShowcaseBrowserStyles = styled.div`
     width: 23rem;
     height: 35rem;
     z-index: 100;
-    margin-top: -1rem;
+    margin: -1rem 0 0 -15%;
 
     color: #000;
     background: linear-gradient( 135deg, #d26979 0%, #f5c156 100% );
@@ -52,10 +52,13 @@ const DubfShowcaseBrowserStyles = styled.div`
     transition: box-shadow 1s ease, transform 1s ease;
 
     h2, h3 {
+      color: #fff;
+      text-shadow: ${ ( props ) => props.isInView ?
+          '.3rem .3rem .5rem rgba( 0, 0, 0, .75 )' : 'none' };
       font-weight: 400;
       text-transform: uppercase;
       letter-spacing: ${ ( props ) => props.isInView ? '.4rem' : 0 };
-      transition: letter-spacing 2s .5s ease;
+      transition: letter-spacing 2s .5s ease, text-shadow 2s .25s ease;
     }
 
     h2 {
