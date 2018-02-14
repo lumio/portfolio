@@ -17,7 +17,10 @@ class Scroller extends React.Component<ScrollerPropsType, {}> {
       return;
     }
 
-    this.scrollToCurrentSection();
+    // TODO: make this check against the tablet media query
+    if ( Math.max( document.documentElement.clientWidth, window.innerWidth ) < 500 ) {
+      this.scrollToCurrentSection();
+    }
   }, 500 );
 
   constructor( props : ScrollerPropsType ) {

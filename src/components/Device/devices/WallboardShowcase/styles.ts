@@ -5,11 +5,10 @@ const WallboardShowcaseStyles = styled.div`
   color: #fff;
   background: #000;
   height: 100%;
-  padding: 4rem;
+  padding: 2rem;
 
-  img {
-    width: 100%;
-    height: auto;
+  ${ ( props ) => props.theme.media.tablet } {
+    padding: 4rem;
   }
 `;
 
@@ -22,6 +21,14 @@ const WallboardItemStyles = styled.div`
 
       .wallboard-item__header {
         position: relative;
+
+        &__name {
+          font-size: .8em;
+
+          ${ props.theme.media.tablet } {
+            font-size: 1em;
+          }
+        }
 
         &__name em {
           font-style: normal;
@@ -54,9 +61,13 @@ const WallboardItemStyles = styled.div`
 
         &__percentage {
           padding-left: .5rem;
-          font-size: .8em;
+          font-size: .7em;
           opacity: ${ isActive ? .7 : 0 };
           transition: opacity .5s;
+
+          ${ props.theme.media.tablet } {
+            font-size: .8em;
+          }
         }
 
         &__health {
@@ -64,8 +75,14 @@ const WallboardItemStyles = styled.div`
           right: 0;
           top: 0;
           img {
-            height: 1.3em;
+            height: 1em;
             width: auto;
+            margin-top: .2rem;
+
+            ${ props.theme.media.tablet } {
+              height: 1.3em;
+              margin-top: 0;
+            }
           }
         }
       }
@@ -73,7 +90,7 @@ const WallboardItemStyles = styled.div`
       .wallboard-item__progress {
         opacity: ${ isActive ? 1 : 0 };
         margin-top: ${ isActive ? '.75rem' : 0 };
-        height: ${ isActive ? '1.6rem' : 0 };
+        height: ${ isActive ? '1.2rem' : 0 };
         background: #064f18;
         box-shadow:
           0 0 1.5rem rgba( 0, 0, 0, .25 ) inset,
@@ -91,15 +108,25 @@ const WallboardItemStyles = styled.div`
           width: ${ props.progress }%;
           transition: width .25s ease;
         }
+
+        ${ props.theme.media.tablet } {
+          height: ${ isActive ? '1.6rem' : 0 };
+        }
       }
     `;
   } }
 
-  margin-bottom: 2rem;
-  padding: 2rem;
-  border-radius: .5rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: .25rem;
   text-shadow: .1rem .1rem .2rem rgba( 0, 0, 0, .4 );
   transition: background .5s, box-shadow .5s;
+
+  ${ ( props ) => props.theme.media.tablet } {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: .5rem;
+  }
 `;
 
 export {
