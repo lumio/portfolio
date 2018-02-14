@@ -2,8 +2,6 @@ import * as React from 'react';
 import * as yaml from 'js-yaml';
 
 import SectionStyles from '../../common/styles/SectionStyles';
-import Scroller from '../Scroller';
-import Background from '../Background';
 
 import { AppStateType } from './types';
 import ErrorBoundary from '../ErrorBoundary';
@@ -65,12 +63,9 @@ class App extends React.Component<{}, AppStateType> {
 
     return (
       <ErrorBoundary>
-        <Scroller>
-          <SectionStyles root>
-            <SectionContainer sections={ this.state.data } />
-          </SectionStyles>
-        </Scroller>
-        <Background />
+        <SectionStyles root>
+          <SectionContainer sections={ this.state.data } />
+        </SectionStyles>
       </ErrorBoundary>
     );
   }

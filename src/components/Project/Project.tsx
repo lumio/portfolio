@@ -7,12 +7,12 @@ import { ProjectStyles } from './styles';
 import { ProjectPropsType } from './types';
 import { concatParts } from './helpers';
 
-const Project : React.StatelessComponent<any> = ( props : ProjectPropsType ) => {
+const Project : React.StatelessComponent<ProjectPropsType> = ( props : ProjectPropsType ) => {
   const { project } = props;
   const scrollPercent = 1 + ( props.scrollTop / props.viewportHeight );
 
   return (
-    <SectionStyles>
+    <SectionStyles className={ props.className }>
       <ProjectStyles>
         <Markdown
           className='project__title'

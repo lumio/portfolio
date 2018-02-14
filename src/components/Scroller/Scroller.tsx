@@ -1,39 +1,37 @@
 import * as React from 'react';
 import { debounce } from 'lodash';
 import { polyfill as smoothscroll } from 'smoothscroll-polyfill';
-import { ScrollerPropsType, ScrollerStateType } from './types';
+import { ScrollerPropsType } from './types';
 
 smoothscroll();
 
-class Scroller extends React.Component<ScrollerPropsType, ScrollerStateType> {
+class Scroller extends React.Component<ScrollerPropsType, {}> {
   isComponentMounted : boolean = false;
   touchStartPos : number = 0;
   touchStartTime : number = 0;
+  domElements : any[] = [];
+  currentSection : number = 0;
 
   onResizeEvent = debounce( () => {
     if ( !this.isComponentMounted ) {
       return;
     }
 
-    this.recalculateContainerCount();
+    this.scrollToCurrentSection();
   }, 500 );
 
   constructor( props : ScrollerPropsType ) {
     super( props );
-    this.state = {
-      documentHeight: 1,
-      viewportHeight: 1,
-      sectionCount: 1,
-      currentSection: 0,
-    };
   }
 
   componentDidMount() {
     this.isComponentMounted = true;
     window.addEventListener( 'touchstart', this.onTouchStartEvent, { passive: false } );
-    window.addEventListener( 'touchend', this.onTouchEndEvent );
+    window.addEventListener( 'touchend', this.onTouchEndEvent, { passive: false } );
     window.addEventListener( 'resize', this.onResizeEvent );
-    this.recalculateContainerCount();
+
+    // We don't need to rerender the component tree.
+    this.domElements = Array.from( document.querySelectorAll( '.project' ) );
   }
 
   componentWillUnmount() {
@@ -43,43 +41,34 @@ class Scroller extends React.Component<ScrollerPropsType, ScrollerStateType> {
     window.removeEventListener( 'resize', this.onResizeEvent );
   }
 
-  recalculateContainerCount() {
-    const documentHeight = Math.max(
-      document.body.scrollHeight,
-      document.body.offsetHeight,
-      document.documentElement.clientHeight,
-      document.documentElement.scrollHeight,
-      document.documentElement.offsetHeight
-    );
-    const viewportHeight = Math.max(
-      document.documentElement.clientHeight,
-      window.innerHeight || 0
-    );
-
-    this.setState( {
-      documentHeight,
-      viewportHeight,
-      sectionCount: Math.round( documentHeight / viewportHeight ),
-    } );
-  }
-
-  scrollToSection( section : number ) {
+  setNextSection( numericDirection : number ) {
+    const sectionCount = this.domElements.length;
     const currentSection = Math.max(
       0,
-      Math.min( this.state.sectionCount - 1, section )
+      Math.min(
+        sectionCount,
+        this.currentSection + numericDirection
+      )
     );
-    this.setState( {
-      currentSection,
-    } );
-    window.scroll( {
-      left: 0,
-      top: currentSection * this.state.viewportHeight,
-      behavior: 'smooth',
-    } );
+    this.currentSection = currentSection;
   }
 
-  render() {
-    return this.props.children;
+  scrollToCurrentSection() {
+    if ( this.currentSection === 0 ) {
+      return this.scrollToPos( 0 );
+    }
+
+    const bodyRect = document.body.getBoundingClientRect();
+    const elementRect = this.domElements[ this.currentSection - 1 ].getBoundingClientRect();
+    this.scrollToPos( elementRect.top - bodyRect.top );
+  }
+
+  scrollToPos( pos : number ) {
+    window.scroll( {
+      left: 0,
+      top: pos,
+      behavior: 'smooth',
+    } );
   }
 
   onTouchStartEvent = ( evt : any ) => {
@@ -99,9 +88,13 @@ class Scroller extends React.Component<ScrollerPropsType, ScrollerStateType> {
     const touch = evt.changedTouches[ 0 ];
     const y = Math.max( touch.clientY, touch.pageY );
     const nextSection = ( y - this.touchStartPos ) < 0;
-    this.scrollToSection( this.state.currentSection + ( nextSection ? 1 : -1 ) );
+    this.setNextSection( nextSection ? 1 : -1 );
+    this.scrollToCurrentSection();
   }
 
+  render() {
+    return this.props.children;
+  }
 }
 
 export default Scroller;

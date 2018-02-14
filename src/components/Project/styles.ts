@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 const ProjectStyles = styled.section`
   ${ ( props : any ) => '' }
-  display: grid;
+  display: flex;
+  flex-direction: column;
   height: 100%;
   padding: 7vmin 8vmin;
 
@@ -31,6 +32,7 @@ const ProjectStyles = styled.section`
   }
 
   ${ ( props ) => props.theme.media.tablet } {
+    display: grid;
     padding: 3rem 4rem;
     grid-template:
       [row1-start] ". header" 1fr [row1-end]

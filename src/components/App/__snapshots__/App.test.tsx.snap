@@ -7,42 +7,37 @@ exports[`App renders snapshot on data 1`] = `
 `;
 
 exports[`App renders snapshot on data 2`] = `
-Array [
-  <div
-    className="sc-bdVaJa ikxqja"
+<div
+  className="sc-bdVaJa glynkO"
 >
-    <div>
-        <div
-            className="sc-bdVaJa giqAzt"
-        >
-            <div
-                className="sc-htpNat eaJjUC"
-            >
-                <div>
-                    <h1>
-                        Portfolio
-                    </h1>
-                    <h2>
-                        of Henry Ford
-                    </h2>
-                    <ul>
-                        <li>
-                            <a
-                                href="mailto:henry.ford@example.com"
-                            >
-                                henry.ford@example.com
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+  <div>
+    <div
+      className="sc-bdVaJa bqOTri"
+    >
+      <div
+        className="sc-bwzfXH cAouE"
+      >
+        <div>
+          <h1>
+            Portfolio
+          </h1>
+          <h2>
+            of Henry Ford
+          </h2>
+          <ul>
+            <li>
+              <a
+                href="mailto:henry.ford@example.com"
+              >
+                henry.ford@example.com
+              </a>
+            </li>
+          </ul>
         </div>
+      </div>
     </div>
-</div>,
-  <div
-    className="sc-bwzfXH jKKyXM"
-/>,
-]
+  </div>
+</div>
 `;
 
 exports[`App renders snapshot on error 1`] = `

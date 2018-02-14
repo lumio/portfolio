@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import images from '../static';
+import theme from './theme';
 
 interface SectionStylesPropsType {
   root? : boolean;
@@ -20,8 +22,14 @@ const SectionStyles = styled.div`
     ` : `
       height: 100vh;
       overflow: hidden;
+      background: url( ${ images.backgroundImage } ) no-repeat left bottom;
+      background-size: cover;
     `
   ) }
+
+  ${ theme.media.tablet } {
+    background: none;
+  }
 `;
 
 export default SectionStyles;

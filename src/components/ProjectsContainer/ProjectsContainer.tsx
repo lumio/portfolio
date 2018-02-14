@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Project from '../Project';
+import Scroller from '../Scroller';
 import { throttle } from 'lodash';
 
 import {
@@ -21,7 +22,10 @@ class ProjectsContainer extends React.Component<ProjectsContainerPropsType, Proj
       window.innerHeight || 0
     );
     this.setState( { scrollTop, viewportHeight } );
-  }, 100 );
+  }, (
+    Math.max( document.documentElement.clientWidth, window.innerWidth ) > 500
+    // throttle depending on device width
+  ) ? 100 : 1000 );
 
   constructor( props : ProjectsContainerPropsType ) {
     super( props );
@@ -45,14 +49,17 @@ class ProjectsContainer extends React.Component<ProjectsContainerPropsType, Proj
   render() {
     return (
       <div ref={ ( dom ) => this.dom = dom }>
-        { this.props.data.map( ( project, index ) => (
-          <Project
-            key={ project.title }
-            scrollTop={ this.state.scrollTop - ( this.state.viewportHeight * index ) }
-            viewportHeight={ this.state.viewportHeight }
-            project={ project }
-          />
-        ) ) }
+        <Scroller>
+          { this.props.data.map( ( project, index ) => (
+            <Project
+              key={ project.title }
+              className='project'
+              scrollTop={ this.state.scrollTop - ( this.state.viewportHeight * index ) }
+              viewportHeight={ this.state.viewportHeight }
+              project={ project }
+            />
+          ) ) }
+        </Scroller>
       </div>
     );
   }

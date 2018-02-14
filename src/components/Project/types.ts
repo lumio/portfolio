@@ -16,6 +16,7 @@ interface ProjectPropsType {
   project : ProjectType;
   scrollTop : number;
   viewportHeight : number;
+  className? : string;
 }
 
 export {

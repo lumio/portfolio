@@ -1,5 +1,6 @@
 import { injectGlobal } from 'styled-components';
 import theme from './theme';
+import images from '../static';
 
 export default injectGlobal`
   *, *::before, *::after {
@@ -49,6 +50,9 @@ export default injectGlobal`
     body {
       font-size: 1.6rem;
       line-height: 1.4;
+      background: url( ${ images.backgroundImage } ) no-repeat left bottom;
+      background-size: cover;
+      background-attachment: fixed;
     }
   }
 `;
