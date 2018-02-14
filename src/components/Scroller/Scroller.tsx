@@ -75,14 +75,22 @@ class Scroller extends React.Component<ScrollerPropsType, {}> {
   }
 
   onTouchStartEvent = ( evt : any ) => {
+    if ( evt.target.nodeName === 'A' ) {
+      return;
+    }
     const touch = evt.changedTouches[ 0 ];
     const y = Math.max( touch.clientY, touch.pageY );
     this.touchStartPos = y;
     this.touchStartTime = Date.now();
+
     evt.preventDefault();
   }
 
   onTouchEndEvent = ( evt : any ) => {
+    if ( evt.target.nodeName === 'A' ) {
+      return;
+    }
+
     const now = Date.now();
     if ( now - this.touchStartTime > 1500 ) {
       return;
