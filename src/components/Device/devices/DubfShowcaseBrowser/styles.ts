@@ -35,8 +35,8 @@ const DubfShowcaseBrowserStyles = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 23rem;
-    height: 35rem;
+    width: 10rem;
+    height: 15rem;
     z-index: 100;
     margin: -1rem 0 0 -15%;
 
@@ -44,10 +44,10 @@ const DubfShowcaseBrowserStyles = styled.div`
     background: linear-gradient( 135deg, #d26979 0%, #f5c156 100% );
     box-shadow:
       ${ ( props ) => props.isInView ?
-        '2.5rem 2.5rem 0 rgba( 0, 0, 0, .2 )' : 'none' };
+        '1.25rem 1.25rem 0 rgba( 0, 0, 0, .2 )' : 'none' };
     transform:
       ${ ( props ) => props.isInView ?
-        'none' : 'translate( 2.5rem, 2.5rem )' };
+        'none' : 'translate( 1.25rem, 1.25rem )' };
     text-align: center;
     transition: box-shadow 1s ease, transform 1s ease;
 
@@ -57,17 +57,42 @@ const DubfShowcaseBrowserStyles = styled.div`
           '.3rem .3rem .5rem rgba( 0, 0, 0, .75 )' : 'none' };
       font-weight: 400;
       text-transform: uppercase;
-      letter-spacing: ${ ( props ) => props.isInView ? '.4rem' : 0 };
+      letter-spacing: ${ ( props ) => props.isInView ? '3px' : 0 };
       transition: letter-spacing 2s .5s ease, text-shadow 2s .25s ease;
     }
 
     h2 {
-      font-size: 2.5rem;
-      margin: -2rem 0 1rem;
+      font-size: .8rem;
+      margin: -1rem 0 .5rem;
     }
 
     h3 {
-      font-size: 1.5rem;
+      font-size: 3px;
+    }
+
+    ${ ( props ) => props.theme.media.tablet } {
+      width: 23rem;
+      height: 35rem;
+
+      box-shadow:
+        ${ ( props ) => props.isInView ?
+          '2.5rem 2.5rem 0 rgba( 0, 0, 0, .2 )' : 'none' };
+      transform:
+        ${ ( props ) => props.isInView ?
+          'none' : 'translate( 2.5rem, 2.5rem )' };
+
+      h2, h3 {
+        letter-spacing: ${ ( props ) => props.isInView ? '.4rem' : 0 };
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        margin: -2rem 0 1rem;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+      }
     }
   }
 `;
