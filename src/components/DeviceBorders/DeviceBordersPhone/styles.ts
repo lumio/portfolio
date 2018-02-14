@@ -3,8 +3,12 @@ import styled from 'styled-components';
 const DeviceBordersPhoneStyles = styled.div`
   position: absolute;
   right: 4vw;
-  bottom: 6rem;
+  bottom: -2rem;
   z-index: 200;
+
+  ${ ( props ) => props.theme.media.tablet } {
+    bottom: 6rem;
+  }
 
   width: 27.5vmin;
   height: 52.25vmin;
