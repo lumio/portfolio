@@ -1,6 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
+  "homepage": "https://cyanjoe.com/portfolio",
   "private": true,
   "scripts": {
     "start": "BROWSER=none react-scripts-ts start",
