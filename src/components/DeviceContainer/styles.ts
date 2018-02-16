@@ -7,7 +7,7 @@ const DeviceContainerStyles = styled.div`
   margin-bottom: 4rem;
 
   ${ ( props ) => props.theme.media.tablet } {
-    height: 100%;
+    height: 50rem;
   }
 `;
 

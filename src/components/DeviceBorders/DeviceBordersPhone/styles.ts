@@ -6,10 +6,6 @@ const DeviceBordersPhoneStyles = styled.div`
   bottom: -2rem;
   z-index: 200;
 
-  ${ ( props ) => props.theme.media.tablet } {
-    bottom: 6rem;
-  }
-
   width: 27.5vmin;
   height: 52.25vmin;
   padding: 6.6vmin 1.1vmin;
@@ -68,6 +64,29 @@ const DeviceBordersPhoneStyles = styled.div`
 
   body.browser-msie-le-11 & {
     bottom: -2.5rem;
+  }
+
+  ${ ( props ) => props.theme.media.tablet } {
+    width: 22.1rem;
+    height: 42rem;
+    padding: 5.3rem .8rem;
+    border-radius: 2.21rem;
+
+    &::before {
+      top: 3.25rem;
+      margin-left: -2rem;
+      width: 4rem;
+      height: .9rem;
+      border-radius: 9rem;
+    }
+
+    &::after {
+      bottom: .8rem;
+      margin-left: -1.875rem;
+      width: 3.75rem;
+      height: 3.75rem;
+      border-radius: 1.875rem;
+    }
   }
 `;
 
