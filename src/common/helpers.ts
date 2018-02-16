@@ -1,3 +1,53 @@
+// Array.from polyfill
+if ( !Array.from ) {
+  Array.from = ( object : any ) => {
+    'use strict';
+    return [].slice.call( object );
+  };
+}
+
+const getBrowserClassName = () => {
+  const ua = navigator.userAgent;
+  let version;
+  let match = ua.match( /(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i ) || [];
+
+  if ( /trident/i.test( match[ 1 ] ) ){
+    version = /\brv[ :]+(\d+)/g.exec( ua ) || [];
+    const versionNumber = +( version[ 1 ] || 0 );
+    const versionLowerEqual11 = versionNumber <= 11 ? ' msie-le-11' : '';
+    return `msie-${ versionNumber }${ versionLowerEqual11 }`;
+  }
+
+  if ( match[ 1 ] === 'Chrome' ){
+    version = ua.match( /\b(OPR|Edge)\/(\d+)/ );
+    if ( version != null ) {
+      return version
+        .slice( 1 )
+        .join( '-' )
+        .replace( 'OPR', 'Opera' )
+        .toLowerCase();
+    }
+  }
+
+  match = match[ 2 ]
+    ? [ match[ 1 ], match[ 2 ] ]
+    : [ navigator.appName, navigator.appVersion, '-?' ];
+  version = ua.match( /version\/(\d+)/i );
+  if ( version !== null ) {
+    match.splice( 1, 1, version[ 1 ] );
+  }
+
+  return match.join( '-' ).toLowerCase();
+};
+
+const addBrowserClassName = () => {
+  const className = getBrowserClassName();
+  const body = document.querySelector( 'body' );
+  if ( body ) {
+    body.className = `browser-${ className }`;
+  }
+};
+
 const trimProtocol = ( url : string ) => {
   return url.replace( /^http(s)?\:\/\//, '' );
 };
@@ -41,6 +91,7 @@ const convertScale = (
 };
 
 export {
+  addBrowserClassName,
   trimProtocol,
   convertUrlToLink,
   convertScale,

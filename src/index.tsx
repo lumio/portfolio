@@ -6,6 +6,8 @@ import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 
 import './common/styles/globalStyles';
+import { addBrowserClassName } from './common/helpers';
+addBrowserClassName();
 
 ReactDOM.render(
   (
