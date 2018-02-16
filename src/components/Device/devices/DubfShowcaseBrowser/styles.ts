@@ -95,6 +95,12 @@ const DubfShowcaseBrowserStyles = styled.div`
       }
     }
   }
+
+  body.browser-msie-le-11 & {
+    .dubf__poster {
+      top: 2rem;
+    }
+  }
 `;
 
 export { DubfShowcaseBrowserStyles };

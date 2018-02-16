@@ -69,6 +69,7 @@ const ProjectStyles = styled.section`
       right: 0;
       top: 16rem;
       width: 65%;
+      max-height: 70vh;
     }
   }
 `;

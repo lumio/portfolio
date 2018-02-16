@@ -113,6 +113,12 @@ const WallboardItemStyles = styled.div`
           height: ${ isActive ? '1.6rem' : 0 };
         }
       }
+
+      body.browser-msie-le-11 & .wallboard-item__header__health {
+        position: absolute;
+        right: 2rem;
+        top: 0;
+      }
     `;
   } }
 

@@ -62,6 +62,15 @@ const DubfShowcasePhoneStyles = styled.div`
     line-height: 1.3;
     padding: 3rem 2rem 2rem;
   }
+
+  body.browser-msie-le-11 & {
+    .dubf__option {
+      display: block;
+      min-height: inherit;
+      line-height: 9rem;
+      text-align: center;
+    }
+  }
 `;
 
 export { DubfShowcasePhoneStyles };

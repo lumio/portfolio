@@ -65,6 +65,10 @@ const DeviceBordersPhoneStyles = styled.div`
     border: 1px solid #d7d7d7;
     overflow: hidden;
   }
+
+  body.browser-msie-le-11 & {
+    bottom: -2.5rem;
+  }
 `;
 
 export { DeviceBordersPhoneStyles };
