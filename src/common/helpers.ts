@@ -14,14 +14,14 @@ const getBrowserClassName = () => {
   if ( /trident/i.test( match[ 1 ] ) ){
     version = /\brv[ :]+(\d+)/g.exec( ua ) || [];
     const versionNumber = +( version[ 1 ] || 0 );
-    const versionLowerEqual11 = versionNumber <= 11 ? ' msie-le-11' : '';
-    return `msie-${ versionNumber }${ versionLowerEqual11 }`;
+    const versionLowerEqual11 = versionNumber <= 11 ? ' browser-msie-le-11' : '';
+    return `browser-msie-${ versionNumber }${ versionLowerEqual11 }`;
   }
 
   if ( match[ 1 ] === 'Chrome' ){
     version = ua.match( /\b(OPR|Edge)\/(\d+)/ );
     if ( version != null ) {
-      return version
+      return 'browser-' + version
         .slice( 1 )
         .join( '-' )
         .replace( 'OPR', 'Opera' )
@@ -37,14 +37,14 @@ const getBrowserClassName = () => {
     match.splice( 1, 1, version[ 1 ] );
   }
 
-  return match.join( '-' ).toLowerCase();
+  return 'browser-' + match.join( '-' ).toLowerCase();
 };
 
 const addBrowserClassName = () => {
   const className = getBrowserClassName();
   const body = document.querySelector( 'body' );
   if ( body ) {
-    body.className = `browser-${ className }`;
+    body.className = className;
   }
 };
 

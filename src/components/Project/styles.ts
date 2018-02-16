@@ -48,6 +48,29 @@ const ProjectStyles = styled.section`
       margin-top: 6.25em;
     }
   }
+
+  body.browser-msie-le-11 & {
+    display: block;
+
+    > .project__title {
+      position: absolute;
+      left: 35%;
+      top: 0;
+      width: 65%;
+    }
+
+    > .project__description {
+      width: 30%;
+      margin-top: 14rem;
+    }
+
+    > .project__showcase {
+      position: absolute;
+      right: 0;
+      top: 16rem;
+      width: 65%;
+    }
+  }
 `;
 
 export {
