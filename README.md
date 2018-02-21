@@ -9,6 +9,12 @@ It currently just uses a static mock file, but I am going to include a small Gra
 How to run this project
 -----------------------
 
+In order to run this project you need to have the following dependencies
+installed on your machine:
+
+- NodeJS + npm or yarn
+- Docker
+
 ```bash
 yarn # or npm install -- install dependencies
 yarn start # or npm start -- start project
