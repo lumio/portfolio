@@ -7,7 +7,7 @@ It includes professional websites and small side projects.
 It currently just uses a static mock file, but I am going to include a small GraphQL.
 
 How to run this project
--------------------------
+-----------------------
 
 ```bash
 yarn # or npm install -- install dependencies
