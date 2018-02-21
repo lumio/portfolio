@@ -4,7 +4,9 @@
   "homepage": "https://cyanjoe.com/portfolio",
   "private": true,
   "scripts": {
-    "start": "BROWSER=none react-scripts-ts start",
+    "start": "concurrently \"yarn start:app\" \"yarn start:docker\"",
+    "start:app": "BROWSER=none react-scripts-ts start",
+    "start:docker": "./scripts/docker-start.sh",
     "postinstall": "cp ./scripts/git/* ./.git/hooks",
     "build": "react-scripts-ts build",
     "deploy": "./scripts/deploy.sh",
@@ -34,6 +36,7 @@
     "@types/react-dom": "^16.0.3",
     "@types/react-test-renderer": "^16.0.0",
     "@types/smoothscroll-polyfill": "^0.3.0",
+    "concurrently": "^3.5.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest-fetch-mock": "^1.4.0",
@@ -43,5 +46,10 @@
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.2.2",
     "tslint-eslint-rules": "^4.1.1"
+  },
+  "proxy": {
+      "/graphql": {
+          "target": "http://127.0.0.1:3030"
+      }
   }
 }
