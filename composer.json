@@ -1,0 +1,13 @@
+{
+    "name": "lumio/portfolio",
+    "type": "project",
+    "require": {
+        "webonyx/graphql-php": "^0.11.5"
+    },
+    "authors": [
+        {
+            "name": "Benjamin Falk",
+            "email": "benjamin.falk@cyanjoe.com"
+        }
+    ]
+}
