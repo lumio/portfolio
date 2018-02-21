@@ -1,8 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App renders snapshot on data 1`] = `
-<div>
-  Pending
+<div
+  className="sc-bwzfXH cnIVSm"
+>
+  <span>
+    loading
+  </span>
 </div>
 `;
 
@@ -15,7 +19,7 @@ exports[`App renders snapshot on data 2`] = `
       className="sc-bdVaJa bqOTri"
     >
       <div
-        className="sc-bwzfXH cAouE"
+        className="sc-htpNat eaJjUC"
       >
         <div>
           <h1>
@@ -41,8 +45,12 @@ exports[`App renders snapshot on data 2`] = `
 `;
 
 exports[`App renders snapshot on error 1`] = `
-<div>
-  Pending
+<div
+  className="sc-bwzfXH cnIVSm"
+>
+  <span>
+    loading
+  </span>
 </div>
 `;
 
