@@ -10,7 +10,7 @@ projects:
     description: |
       A **build status monitor for Jenkins**. It started as a weekend project,
       published under the **open source license GPL-3.0**. It is built with
-      **React** in the frontend and **NodeJS** with ExpressJS in the backend.
+      **React** in the front end and **NodeJS** with ExpressJS in the back end.
       Communication works via websockets.
     packageUrl: https://npmjs.com/package/wallboard
     repository: https://github.com/lumio/wallboard
@@ -55,9 +55,9 @@ projects:
     description: |
       The entire website, including the private customer section, is being
       ported using **React**, **Relay** for data abstraction and with C# in
-      the backend
+      the back end
     released: December 2017
-    role: Frontend Engineer
+    role: Front End Engineer
     employer: Kalbeck Ventures GmbH
     url: https://www.gutmannfonds.at
     devices:
@@ -73,7 +73,7 @@ projects:
       A single-page application built with **Angular 1**. This is an online
       platform to get inspired for adventure holidays.
     released: 2014
-    role: Frontend Engineer
+    role: Front End Engineer
     employer: Jollydays GmbH
     url: https://makeyourday.com
     devices:
@@ -88,7 +88,7 @@ projects:
     description: |
       A website for a non-profit organisation in Uganda, based on **Drupal 7**.
     release: 2014
-    role: Webdesigner, Frontend and Backend Developer
+    role: Web Designer, Front End and Back End Developer
     url: http://ywamsoroti.com
     devices:
       browser:
