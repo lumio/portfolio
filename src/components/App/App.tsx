@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as yaml from 'js-yaml';
 
 import SectionStyles from '../../common/styles/SectionStyles';
-
+import { AppLoadingStyles } from './styles';
 import { AppStateType } from './types';
 import ErrorBoundary from '../ErrorBoundary';
 import SectionContainer from '../SectionContainer';
@@ -42,7 +42,7 @@ class App extends React.Component<{}, AppStateType> {
 
   renderPending() {
     return (
-      <div>Pending</div>
+      <AppLoadingStyles><span>loading</span></AppLoadingStyles>
     );
   }
 
